@@ -1,11 +1,15 @@
 addpath("lib");
 addpath("lib/LogisticRegression");
 
-sample_number = 5000;
-feature_count = 3;
-Theta = random_initialize(3, 1, 1);
+feature_count = input("How many feature: ");
+Theta = random_initialize(feature_count, 1, 1);
+yes = input("Do you want to generate new training example: ");
 
-generate_training_data(sample_number, feature_count, @generator);
+if yes == 1
+  sample_number = input("How many training example: ");
+  generate_training_data(sample_number, feature_count, @generator);
+end
+
 csv = load_files();
 
 
