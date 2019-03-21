@@ -2,7 +2,7 @@ addpath("lib");
 addpath("lib/LogisticRegression");
 addpath("lib/Generator");
 
-feature_count = input("How many feature: ");
+feature_count = input("How many Inputs: ");
 Theta = random_initialize(feature_count, 1, 1);
 yes = input("Do you want to generate new training example: ");
 
