@@ -1,5 +1,6 @@
 addpath("lib");
 addpath("lib/LogisticRegression");
+addpath("lib/Generator");
 
 feature_count = input("How many feature: ");
 Theta = random_initialize(feature_count, 1, 1);
