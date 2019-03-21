@@ -26,7 +26,7 @@ correct = 0;
 incorrect = 0;
 
 for i = 1:m
-  positive = hypothesis(Theta' * csv.training_data(:, i)) >= 0.5;
+  positive = hypothesis(-10 + (Theta' * csv.training_data(:, i))) >= 0.5;
 
   if positive == csv.training_labels(i)
     correct++;
@@ -47,11 +47,11 @@ while 1
     input_list = [input_list; input_number];
   end
 
-  answer = hypothesis(Theta' * input_list) >= 0.5;
+  answer = hypothesis(-10 + (Theta' * input_list)) >= 0.5;
 
   if answer == 1
-    disp("all numbers are  positive");
+    disp("true");
   else
-    disp("numbers include at least one negative");
+    disp("false");
   end
 end
