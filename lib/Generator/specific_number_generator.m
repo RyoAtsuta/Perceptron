@@ -1,12 +1,23 @@
 function data = generator(feature_count)
   range = 5;
-  data.training_data = round(random_initialize(feature_count, 1, range));
+  specific_number = 3;
+  data.training_data = [];
+
+  rand_val = rand(1);
+
+  if rand_val > 0.5
+    data.training_data = round(random_initialize(feature_count, 1, range));
+  else
+    for i = 1:feature_count
+      data.training_data = [data.training_data; specific_number];
+    end
+  end
 
   all_true = 0;
   true_count = 0;
   for i = 1:feature_count
     number = data.training_data(i);
-    if number == 3
+    if number == specific_number
       true_count++;
     end
   end
