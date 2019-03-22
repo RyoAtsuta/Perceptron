@@ -1,6 +1,17 @@
 function data = generator(feature_count)
   range = 100;
-  data.training_data = random_initialize(feature_count, 1, range) > 0;
+  add_number = 1;
+  data.training_data = [];
+
+  rand_val = rand(1);
+
+  if rand_val > 0.5
+    data.training_data = round(random_initialize(feature_count, 1, range)) > 0;
+  else
+    for i = 1:feature_count
+      data.training_data = [data.training_data; add_number];
+    end
+  end
 
   all_positive = 0;
   positive_count = 0;
