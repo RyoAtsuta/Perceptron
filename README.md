@@ -1,4 +1,4 @@
-# Linear Regression
+# Perceptron
 This Matchine Learning Program try to learn behavior of OR.
 
 |X1|X2|X3|Q|
